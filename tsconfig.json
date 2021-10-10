@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "lib": [
+      "dom",
+      "esnext",
+      "dom.iterable"
+    ],
+  },
+  "include": ["src", "src/**/*.ts"],
+  "exclude": ["node_modules",]
+}
