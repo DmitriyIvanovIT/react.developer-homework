@@ -1,6 +1,6 @@
-import { createInterface } from "readline";
+import { createInterface } from 'readline';
 
-import { runner } from "./runner";
+import { runner } from './runner';
 
 const rl = createInterface({
   input: process.stdin,
@@ -9,7 +9,7 @@ const rl = createInterface({
 
 const question = (): Promise<void> =>
   new Promise((resolve) => {
-    rl.question("> ", (answer: string) => {
+    rl.question('> ', (answer: string) => {
       const result = runner(answer);
 
       if (result) {
@@ -20,7 +20,7 @@ const question = (): Promise<void> =>
     });
   });
 
-async function app(): Promise<null> {
+async function app(): Promise<never> {
   while (true) {
     await question();
   }

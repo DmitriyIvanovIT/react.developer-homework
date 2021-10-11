@@ -21,10 +21,10 @@ export const minus: ScalarOperationType = (
 ): number => first - second;
 
 export const mathOperators: { [key: string]: ScalarOperationType } = {
-  "*": mul,
-  "/": div,
-  "+": add,
-  "-": minus,
+  '*': mul,
+  '/': div,
+  '+': add,
+  '-': minus,
 };
 
 export const mathPriorities: number[] = [1, 2];
@@ -32,8 +32,8 @@ export const mathPriorities: number[] = [1, 2];
 const [FIRST, SECOND] = mathPriorities;
 
 export const mathOperatorsPriorities: { [key: string]: number } = {
-  "*": FIRST,
-  "/": FIRST,
-  "+": SECOND,
-  "-": SECOND,
+  '*': FIRST,
+  '/': FIRST,
+  '+': SECOND,
+  '-': SECOND,
 };
