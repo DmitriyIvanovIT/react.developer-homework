@@ -20,15 +20,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn check"
     }
-  },
-  "lint-staged": {
-    "{*.tsx,*.ts,*.js}": [
-      "eslint --fix src",
-      "prettier --write src",
-      "jest src"
-    ]
   },
   "jest": {
     "moduleFileExtensions": [
