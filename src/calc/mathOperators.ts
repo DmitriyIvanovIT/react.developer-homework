@@ -1,24 +1,12 @@
 export type ScalarOperationType = (first: number, second?: number) => number;
 
-export const mul: ScalarOperationType = (
-  first: number,
-  second: number
-): number => first * second;
+export const mul: ScalarOperationType = (first: number, second: number): number => first * second;
 
-export const div: ScalarOperationType = (
-  first: number,
-  second: number
-): number => first / second;
+export const div: ScalarOperationType = (first: number, second: number): number => first / second;
 
-export const add: ScalarOperationType = (
-  first: number,
-  second: number
-): number => first + second;
+export const add: ScalarOperationType = (first: number, second: number): number => first + second;
 
-export const minus: ScalarOperationType = (
-  first: number,
-  second: number
-): number => first - second;
+export const minus: ScalarOperationType = (first: number, second: number): number => first - second;
 
 export const square = (num: number): number => num ** 2;
 
@@ -26,7 +14,7 @@ export const power: ScalarOperationType = (first: number, second: number): numbe
 
 export const factorial = (num: number): number => {
   if (num === 0 || num === 1) {
-    return 1
+    return 1;
   }
 
   let result = 1;
@@ -36,7 +24,7 @@ export const factorial = (num: number): number => {
   }
 
   return result;
-}
+};
 
 export const mathOperators: { [key: string]: ScalarOperationType } = {
   '*': mul,

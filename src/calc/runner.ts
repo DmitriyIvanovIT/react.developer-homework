@@ -1,6 +1,6 @@
 import { parser } from './parser';
 
-import {firstPrioritiesCalc, secondPrioritiesCalc, thirdPrioritiesCalc, unaryPrioritiesCalc} from './engine';
+import { firstPrioritiesCalc, secondPrioritiesCalc, thirdPrioritiesCalc, unaryPrioritiesCalc } from './engine';
 
 export const runner = (line: string): number => {
   const stack = parser(line);
@@ -12,7 +12,7 @@ export const runner = (line: string): number => {
   const unaryPrioritiesRes = unaryPrioritiesCalc(stack);
 
   if (unaryPrioritiesRes.length === 1) {
-    return  Number(unaryPrioritiesRes[0]);
+    return Number(unaryPrioritiesRes[0]);
   }
 
   const firstPrioritiesRes = firstPrioritiesCalc(unaryPrioritiesRes);

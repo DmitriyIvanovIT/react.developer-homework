@@ -2,3 +2,5 @@
 .idea/
 dist/
 .history/
+/coverage/
+yarn-error.log

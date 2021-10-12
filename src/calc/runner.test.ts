@@ -15,15 +15,15 @@ describe('Runner simple cases', () => {
 
   it('5 !', () => {
     expect(runner('5 !')).toEqual(120);
-  })
+  });
 
   it('5 **', () => {
     expect(runner('5 **')).toEqual(25);
-  })
+  });
 
   it('4 ^ 4', () => {
     expect(runner('4 ^ 4')).toEqual(256);
-  })
+  });
 });
 
 describe('Runner tripled/mixed cases', () => {
@@ -40,27 +40,27 @@ describe('Runner tripled/mixed cases', () => {
   });
 
   it('5 ! + 2', () => {
-    expect(runner('5 ! + 2')).toEqual(122)
+    expect(runner('5 ! + 2')).toEqual(122);
   });
 
   it('5 ! + 2 * 3', () => {
-    expect(runner('5 ! + 2 * 3')).toEqual(126)
+    expect(runner('5 ! + 2 * 3')).toEqual(126);
   });
 
   it('5 ** + 2', () => {
-    expect(runner('5 ** + 2')).toEqual(27)
+    expect(runner('5 ** + 2')).toEqual(27);
   });
 
   it('5 ^ 3 + 8', () => {
-    expect(runner('5 ^ 3 + 8')).toEqual(133)
+    expect(runner('5 ^ 3 + 8')).toEqual(133);
   });
 
   it('4 ^ 4 + 2 * 5', () => {
-    expect(runner('4 ^ 4 + 2 * 5')).toEqual(266)
+    expect(runner('4 ^ 4 + 2 * 5')).toEqual(266);
   });
 
   it('2 * 2 ^ 4', () => {
-    expect(runner('2 * 2 ^ 4')).toEqual(32)
+    expect(runner('2 * 2 ^ 4')).toEqual(32);
   });
 });
 
@@ -74,6 +74,6 @@ describe('Runner long cases', () => {
   });
 
   it('2 * 2 ^ 4 + 3 ** * 4', () => {
-    expect(runner('2 * 2 ^ 4 + 3 ** * 4')).toEqual(68)
+    expect(runner('2 * 2 ^ 4 + 3 ** * 4')).toEqual(68);
   });
 });

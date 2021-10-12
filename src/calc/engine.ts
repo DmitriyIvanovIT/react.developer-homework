@@ -1,10 +1,6 @@
 import { ParsedLineType } from './parser';
 import { isNumber } from './helpers';
-import {
-  mathOperators,
-  mathPriorities,
-  mathOperatorsPriorities,
-} from './mathOperators';
+import { mathOperators, mathPriorities, mathOperatorsPriorities } from './mathOperators';
 
 const [UNARY, FIRST, SECOND, THIRD] = mathPriorities;
 
@@ -12,19 +8,11 @@ export const unaryPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
   stack.reduce<ParsedLineType>((result, nextItem) => {
     const prevItem = result[result.length - 1];
 
-    console.log(prevItem, nextItem);
-
-    if (
-      !isNumber(String(nextItem)) &&
-      mathOperatorsPriorities[nextItem] === UNARY
-    ) {
+    if (!isNumber(String(nextItem)) && mathOperatorsPriorities[nextItem] === UNARY) {
       if (!mathOperators[nextItem]) {
         throw new TypeError('Unexpected stack!');
       }
-      result = [
-        ...result.slice(0, -1),
-        mathOperators[nextItem](Number(prevItem)),
-      ];
+      result = [...result.slice(0, -1), mathOperators[nextItem](Number(prevItem))];
     } else {
       result.push(nextItem);
     }
@@ -40,10 +28,7 @@ export const firstPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
       if (!mathOperators[item]) {
         throw new TypeError('Unexpected stack!');
       }
-      result = [
-        ...result.slice(0, -2),
-        mathOperators[item](Number(prevItem), Number(nextItem)),
-      ];
+      result = [...result.slice(0, -2), mathOperators[item](Number(prevItem), Number(nextItem))];
     } else {
       result.push(nextItem);
     }
@@ -63,10 +48,7 @@ export const secondPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
       if (!mathOperators[item]) {
         throw new TypeError('Unexpected stack!');
       }
-      result = [
-        ...result.slice(0, -2),
-        mathOperators[item](Number(prevItem), Number(nextItem)),
-      ];
+      result = [...result.slice(0, -2), mathOperators[item](Number(prevItem), Number(nextItem))];
     } else {
       result.push(nextItem);
     }

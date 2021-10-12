@@ -13,9 +13,8 @@ export const parser = (line: string): ParsedLineType | null => {
 
     const isValidNumberPush = !isNumber(prevItem) && isNumber(item) && mathOperatorsPriorities[prevItem] !== UNARY;
     const isValidOperatorPush =
-      (isNumber(prevItem) &&
-      !isNumber(item) &&
-      mathOperators.hasOwnProperty(item)) || (mathOperators.hasOwnProperty(item) && mathOperatorsPriorities[prevItem] === UNARY);
+      (isNumber(prevItem) && !isNumber(item) && mathOperators.hasOwnProperty(item)) ||
+      (mathOperators.hasOwnProperty(item) && mathOperatorsPriorities[prevItem] === UNARY);
 
     if (isValidNumberPush) {
       result.push(Number(item));
