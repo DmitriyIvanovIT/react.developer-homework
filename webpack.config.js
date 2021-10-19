@@ -1,13 +1,20 @@
 const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const dist = path.join(__dirname, 'dist');
 const src = path.join(__dirname, 'src');
 
 module.exports = {
   context: src,
-  entry: './index.ts',
+  entry: './index.tsx',
+  devtool: 'source-map',
   output: {
     path: dist,
+    filename: 'index.js'
+  },
+  devServer: {
+    port: 3000,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -19,6 +26,16 @@ module.exports = {
     ],
   },
   resolve: {
+    alias: {
+      '@': src
+    },
     extensions: ['.ts', '.js', '.tsx']
-  }
+  },
+  plugins: [
+    new HTMLWebpackPlugin(
+      {
+        template: src + '/public/index.html'
+      }
+    )
+  ]
 };

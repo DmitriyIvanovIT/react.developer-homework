@@ -15,12 +15,16 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "./dist",
+    "declaration": true,
     "lib": [
       "dom",
       "esnext",
       "dom.iterable"
     ],
+    "paths": {
+      "@/components/*": ["components/*"]
+    }
   },
-  "include": ["src", "src/**/*.ts"],
-  "exclude": ["node_modules",]
+  "include": ["src", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules"],
 }
