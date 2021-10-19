@@ -1,6 +1,6 @@
 import { mul, div, add, minus, square, power, factorial } from './mathOperators';
 
-describe('mathOperators test cases', () => {
+describe('mathOperators tests cases', () => {
   it('mul 1 * 2 to equal 2', () => {
     expect(mul(1, 2)).toBe(2);
   });
