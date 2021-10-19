@@ -1,0 +1,6 @@
+/node_module/
+.idea/
+dist/
+.history/
+/coverage/
+yarn-error.log
